@@ -29,7 +29,7 @@ RCT_EXPORT_METHOD(create:(NSDictionary *)config findEventsWithResolver:(RCTPromi
         UIImage *thumbnail = [self generateThumbImage:asset atTime:timeStamp];
 
         // Save to temp directory
-        NSString* tempDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+        NSString* tempDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
         tempDirectory = [tempDirectory stringByAppendingString:@"/thumbnails/"];
         // Create thumbnail directory if not exists
         [[NSFileManager defaultManager] createDirectoryAtPath:tempDirectory withIntermediateDirectories:YES attributes:nil error:nil];
